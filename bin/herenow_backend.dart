@@ -1,5 +1,17 @@
-import 'package:herenow_backend/herenow_backend.dart' as herenow_backend;
+// import 'package:herenow_backend/herenow_backend.dart' as herenow_backend;
 
-void main(List<String> arguments) {
-  print('Hello world: ${herenow_backend.calculate()}!');
+// void main(List<String> arguments) {
+//   print('Hello world: ${herenow_backend.calculate()}!');
+// }
+
+import 'package:alfred/alfred.dart';
+import 'package:herenow_backend/routes/routes.dart';
+
+void main() async {
+  final app = Alfred();
+
+  // 루트 등록
+  registerRoutes(app);
+  await app.listen(3000);
+  print('Server running on port 3000');
 }

@@ -1,5 +1,5 @@
 name: herenow_backend
-description: A sample command-line application.
+description: Alfred server project for project 'HereNow'
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
@@ -9,6 +9,9 @@ environment:
 # Add regular dependencies here.
 dependencies:
   # path: ^1.8.0
+  alfred: ^1.1.1
+  mime: ^1.0.5
+  path: ^1.9.0
 
 dev_dependencies:
   lints: ^3.0.0
