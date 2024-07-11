@@ -9,7 +9,10 @@ void registerRoutes(Alfred app) {
   imageController.registerRoutes(app);
   postController.registerRoutes(app);
 
-  app.get('/', (req, res) async {
-    res.send('Server is running');
-  });
+  app.get(
+    '/',
+    (req, res) async {
+      res.send('Server is running');
+    },
+  );
 }

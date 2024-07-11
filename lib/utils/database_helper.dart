@@ -13,11 +13,17 @@ class DatabaseHelper {
   DatabaseHelper._internal();
 
   Future<void> init() async {
-    final dataDir = Directory(join(Directory.current.path, 'data'));
+    final dataDir = Directory(join(
+      Directory.current.path,
+      'data',
+    ));
     if (!await dataDir.exists()) {
       await dataDir.create(recursive: true);
     }
-    final dbPath = join(dataDir.path, 'herenow.db');
+    final dbPath = join(
+      dataDir.path,
+      'herenow.db',
+    );
     _database = sqlite3.open(dbPath);
 
     // 테이블을 생성하자~~

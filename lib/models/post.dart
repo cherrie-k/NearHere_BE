@@ -62,7 +62,9 @@ class Post {
       category: map['category'],
       image: map['image'],
       content: map['content'],
-      createdAt: DateTime.parse(map['createdAt']),
+      createdAt: DateTime.parse(
+        map['createdAt'],
+      ),
     );
   }
 }

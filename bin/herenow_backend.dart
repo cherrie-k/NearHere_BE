@@ -9,14 +9,19 @@ import 'package:herenow_backend/routes/routes.dart';
 import 'package:herenow_backend/utils/database_helper.dart';
 
 void main() async {
-  final dbHelper = DatabaseHelper();
-  await dbHelper.init();
+  try {
+    final dbHelper = DatabaseHelper();
+    await dbHelper.init();
 
-  final app = Alfred();
+    final app = Alfred();
 
-  // 루트 등록
-  registerRoutes(app);
-  
-  await app.listen(3000);
-  print('Server running on port 3000');
+    // 루트 등록
+    registerRoutes(app);
+
+    await app.listen(3000);
+    print('Server running on port 3000');
+  } catch (e, stacktrace) {
+    print('Failed to start server: $e');
+    print(stacktrace);
+  }
 }
